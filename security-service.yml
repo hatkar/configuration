@@ -1,8 +1,5 @@
 spring:
-  spring:
-    application:
-      name: security-service
-
+  
   output:
     ansi:
       enabled: always

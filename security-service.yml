@@ -25,3 +25,4 @@ eureka:
         preferIpAddress: true
   instance:
     instance-id: ${spring.application.name}:${random.uuid}
+prof: devloppement

@@ -1,22 +1,31 @@
 spring:
-  
- 
-logging:
-  level:
-    org:
+  logging:
+    level:
+      org:
+        hibernate:
+          SQL: DEBUG
+          type:
+            descriptor:
+              sql:
+                BasicBinder: TRACE
+  output:
+    ansi:
+      enabled: always
+  datasource:
+    url: jdbc:h2:file:./kotlin-tuto/db-user2
+    username: sa
+    password: sa
+    jpa:
       hibernate:
-        SQL: DEBUG
-        type:
-          descriptor:
-            sql:
-              BasicBinder: TRACE
+        ddl-auto: update
+      database-platform: org.hibernate.dialect.H2Dialect
+
 
 server:
   port: 0
 app:
   jwtSecret: karim
   jwtExpirationInMs: 1000000
-
 eureka:
   client:
     service-url:
@@ -25,3 +34,5 @@ eureka:
         preferIpAddress: true
   instance:
     instance-id: ${spring.application.name}:${random.uuid}
+
+
